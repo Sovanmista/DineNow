@@ -6,7 +6,7 @@ import { BSON } from "bson";
 // import { useContext } from 'react';
 import Search from "./search.png";
 import CartIcon from "./cart.png";
-import { Link } from "react-router-dom";
+import { Link, redirect } from "react-router-dom";
 function Contents() {
   const [currentCart, setCurrentCart] = useState([]);
   const [fetchedItems, setFetchedItems] = useState([]);
@@ -42,8 +42,15 @@ function Contents() {
 
   // fetches data from items collection
   const itemset = async () => {
+    const token= localStorage.getItem("jwttoken");
     try {
-      const response = await fetch("http://localhost:3001/api/items");
+      
+      const response = await fetch("http://localhost:3001/api/items", {
+        method: "GET",
+        headers:{
+          "Authorization":`Bearer ${token}`
+        }
+      });
       if (response.ok) {
         const data = await response.json();
         console.log(data);
@@ -51,6 +58,8 @@ function Contents() {
       } else {
         console.error("Something went wrong");
       }
+    
+    
     } catch (err) {
       console.log(err);
     }
