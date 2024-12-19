@@ -9,7 +9,7 @@ mongoose.connect("mongodb+srv://susovanmishra0800:<x2hZjeo9dIacA9xu>@cluster0.49
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(() => console.log('MongoDB connected'))
-.catch(err => console.log(err));;
+.catch(err => console.log(err));
 app.use("/api", Router);
 app.listen(3001, () => {
   console.log("listening on 3001");
