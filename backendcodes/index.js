@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const Router = require("./routes/rout");
 const app = express();
-
+const port=process.env.PORT||3001
 app.use(cors());
 app.use(express.json());
 
@@ -16,6 +16,6 @@ mongoose.connect("mongodb+srv://susovanmishra0800:_aYDiW98kiah64w@cluster0.49vu4
 
 app.use("/api", Router);
 
-app.listen(3001, () => {
+app.listen(port, () => {
   console.log("listening on 3001");
 });
