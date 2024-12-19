@@ -16,6 +16,6 @@ mongoose.connect("mongodb+srv://susovanmishra0800:_aYDiW98kiah64w@cluster0.49vu4
 
 app.use("/api", Router);
 
-app.listen(3001, () => {
-  console.log("listening on 3001");
+app.listen(4000, () => {
+  console.log("listening on 4000");
 });
