@@ -9,7 +9,7 @@ const ordersSchema = mongoose.Schema({
   orders: [String],
   payment: Number,
   cancel: Boolean,
-  complete: Boolean
+  complete: String
 });
 const orderModel = mongoose.model("orders", ordersSchema);
 module.exports = orderModel;
