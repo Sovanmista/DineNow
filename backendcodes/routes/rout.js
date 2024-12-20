@@ -235,7 +235,7 @@ router.post("/orders", async (req, res) => {
           orders: ordernames,
           payment: total,
           cancel: false,
-          complete: "order on its way"
+          complete: false
         });
         const saveOrders = await newOrders.save();
         res.json(saveOrders);
